@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{160:function(t,a,n){"use strict";n.r(a);var e=n(0),i=n.n(e),s=(n(164),n(166)),c=n(163);n(161),n(193);a.default=function(){return i.a.createElement(s.a,null,i.a.createElement(c.a,{title:"GatsbyJS Tailwind Starter",keywords:["gatsby","tailwind","react","tailwindcss"]}))}},193:function(t,a,n){t.exports=n.p+"static/cat-and-human-illustration-9c0792a4868eb126f7145d7d2fa5a172.svg"}}]);
+//# sourceMappingURL=component---src-pages-index-js-9f226e8cf1508cb753c6.js.map

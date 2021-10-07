@@ -16,13 +16,16 @@ import ContactForm from "./form";
 
 function Layout({ children }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
-
+  const isBrowser = typeof window !== "undefined"
   //FUNCION PARA CERRAR EL MENU CUANDO HAGA CLICK AFUERA DEL MENU
-  window.addEventListener('mouseup', function(e){
-         if(e.target.id !== 'mobile-menu'){
-            document.getElementById("mobile-menu").classList.add("hidden");
-         }
-     });
+  if (isBrowser) {
+    window.addEventListener('mouseup', function(e){
+      if(e.target.id !== 'mobile-menu'){
+         document.getElementById("mobile-menu").classList.add("hidden");
+      }
+  });
+  }
+  
 
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
