@@ -20,7 +20,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#4dc0b5`,
         display: `minimal-ui`,
-        icon: `src/images/tailwind-icon.png`
+        icon: `src/images/favicon.png`
       }
     },
     `gatsby-plugin-postcss`,
@@ -28,7 +28,7 @@ module.exports = {
       resolve: "gatsby-plugin-purgecss",
       options: {
         tailwind: true,
-        purgeOnly: ["src/css/style.css", "src/css/global.css"]
+        purgeOnly: ["src/css/style.css", "src/css/global.css","src/css/glide.core.min.css" ]
       }
     }
   ]
