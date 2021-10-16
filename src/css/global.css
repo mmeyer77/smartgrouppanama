@@ -1,3 +1,6 @@
+html, body { max-width: 100vw; overflow-x: hidden; }
+
+
 html{
     scroll-behavior: smooth;
 }
@@ -10,6 +13,11 @@ html{
 .gradient2{
     background: linear-gradient(
         90deg,#007874,#01AAA5);
+}
+
+.smart__fontcolor{
+    
+  color:   #007874;
 }
 
 .fondo__seccion{
@@ -29,8 +37,12 @@ html{
     top: 50%;
 }
 .especial__tecnico{
-    transform: scaleY(1.5);
+    
     margin-top: 38px;
+}
+
+.especial__maxwidth{
+    max-width: 476px;
 }
 
 .title__seguridad{
