@@ -191,7 +191,7 @@ function Layout({ children }) {
                 <h2 className="w-full my-2 text-2xl md:text-4xl font-bold leading-tight text-center text-gray-800">TU SEGURIDAD ES PRIMERO<br/> OFRECEMOS CALIDAD A LOS MEJORES PRECIOS</h2>
                 
 
-                  <p className="text-gray-600 md:w-3/4 w-1/2 mb-8 text-center self-center md:text-xl font-extralight">Empresa 100% panameña, con mas de 10 años de experiencia en el mercado, dedicados a la venta, instalación y mantenimiento de sistemas de seguridad y tecnología.<br /><br />
+                  <p className="text-gray-600 md:w-3/4 w-full mb-8 text-center self-center md:text-xl font-extralight">Empresa 100% panameña, con mas de 10 años de experiencia en el mercado, dedicados a la venta, instalación y mantenimiento de sistemas de seguridad y tecnología.<br /><br />
                     
                   </p>
                             
@@ -506,7 +506,7 @@ function Layout({ children }) {
 
                         <div className="flex-1">
                         <h2 className="text-xl md:mb-6 mx-auto md:mx-0 max-w-min font-bold">HORARIOS</h2>
-                            <ul className="list-reset mb-6 flex flex-col justify-center w-full md:mx-0 mx-auto">
+                            <ul className="list-reset mb-6 flex flex-col justify-center md:mx-0 mx-auto w-64 text-center ">
                                 <li className="mt-2 mr-2 md:block md:mr-0">
                                     <p className="text-gray-600 text-lg no-underline hover:underline hover:text-green-700">Lun-Vie 8:00 a.m. - 6:00 p.m.  </p>
                                 </li>
