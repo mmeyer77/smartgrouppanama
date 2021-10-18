@@ -7,7 +7,7 @@ html{
 
 /* main color */
 .gradient {
-    background-color: rgb(0, 120, 116, 0.8) ;
+    background-color: rgb(0, 120, 116) ;
 }
 
 .gradient2{
@@ -36,14 +36,15 @@ html{
 .top-1\/2{
     top: 50%;
 }
+.max-w-min{
+    max-width: min-content;
+}
 .especial__tecnico{
     
     margin-top: 38px;
 }
 
-.especial__maxwidth{
-    max-width: 476px;
-}
+
 
 .title__seguridad{
     font-size: 4rem;
@@ -52,6 +53,7 @@ html{
 @font-face {
     font-family: "Josefin Sans";
     src: url("../fonts/JosefinSans-VariableFont_wght.ttf");
+    
   }
 
 body {
@@ -110,11 +112,30 @@ body {
     background-size: cover;
 } */
 .bgTop {
-    z-index: 15;
+    z-index: 9;
     opacity: 0.2;
 }
+
+.scale-0{
+    transform: scaleX(0);
+    transform: scaleY(0);
+}
+
+.scale-100{
+    transform: scaleX(1);
+    transform: scaleY(1);
+}
+.top-3\/4{
+    top:85%;
+}
+.transition-transform{
+    transition-property: transform;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 300ms;
+}
+
 .bgMiddle {
-    z-index: 10;
+    z-index: 8;
     opacity: 0.75;
 }
 .bgBottom {
@@ -150,3 +171,30 @@ body {
 .waveAnimation .waveBottom {
     animation: move_wave 15s linear infinite;
 }
+
+
+
+@media only screen and (max-width: 415px) {
+    /* place here CSS for when the screen is less than 375px wide */
+    .especial__maxwidth{
+        max-width: 177px;
+    }
+
+  }
+
+  @media only screen and (max-width: 375px) {
+    /* place here CSS for when the screen is less than 375px wide */
+    .especial__maxwidth{
+        max-width: 150px;
+    }
+
+  }
+
+  @media only screen and (min-width: 1023px) {
+    
+    .especial__maxwidth{
+        max-width: 376px;
+    }
+
+  }
+

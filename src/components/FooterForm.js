@@ -1,45 +1,47 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-function ContactForm() {
+function FooterForm() {
   const [state, handleSubmit] = useForm("mzbywkqy");
   if (state.succeeded) {
-      handleReload();
+    handleReload();
       return <p className="w-full text-3xl text-white">¡Gracias por contactarnos!</p>;
-     
   }
+
   function handleReload(){
     setTimeout(function(){window.location.reload();},1500)
   }
+
   return (
-    <form class="hidden md:flex flex-wrap flex-row justify-between bg-white rounded-lg px-4 py-2 w-full max-w-2xl mt-4" onSubmit={handleSubmit}>
-    <div class="flex items-center border-b py-3 w-1/4">
-      <input class="appearance-none bg-transparent border-none w-full text-black mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="NOMBRE" id="name"
+    <form class="flex flex-wrap flex-col justify-around rounded-lg px-4 w-full md:w-1/2 mx-auto" onSubmit={handleSubmit} >
+      <p className="uppercase w-full text-3xl text-white">¡Escríbenos y te asesoramos!</p>
+    <div class="flex items-center py-3 w-full">
+      <input class=" bg-white appearance-none bg-transparent border-none w-full text-black py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Nombre" id="name"
          
-        name="name"/>
+        name="nombre"/>
+
+        
                       
     </div>
 
-    <div class="flex items-center border-b  py-3 w-1/3">
-      <input class="appearance-none bg-transparent border-none w-full text-black mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="CORREO" id="email"
+    <div class="flex items-center  py-3 w-full">
+      <input class="bg-white appearance-none bg-transparent border-none w-full text-black py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Correo" id="email"
         
         name="email"/>
                 
       
     </div>
 
-    <div class="flex items-center border-b py-3 w-1/4">
-      <input class="appearance-none bg-transparent border-none w-full text-black mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="TELÉFONO" id="phone"
+    <div class="flex items-center py-3 w-full">
+      <input class="bg-white appearance-none bg-transparent border-none w-full text-black py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Teléfono" id="telefono"
         
-        name="phone"/>
+        name="telefono"/>
                 
       
     </div>
     
-   
-
-    <div class="flex items-center py-2 w-4/6 border-b">
+    <div class="flex items-center py-3 w-full">
     <select name="producto" class="bg-white border-white form-select block w-full mt-1 py-1 px-2">
-      <option value="" disabled selected hidden>Seleccionar producto</option>
+      <option value="" disabled selected hidden >Seleccionar producto</option>
       <option value="- PROMO - Kit Control de Acceso">- PROMO - Kit Control de Acceso</option>
       <option value="- PROMO - Kit Video Portero">- PROMO - Kit Video Portero</option>
       <option value="- PROMO - Kit Cámaras de Seguridad"> - PROMO - Kit Cámaras de Seguridad</option>
@@ -58,11 +60,16 @@ function ContactForm() {
       
       
     </div>
-    <button class="flex-shrink-0 gradient hover:bg-teal-700 border-teal-700  hover:border-teal-700 text-sm border-4 text-white  px-3 mt-4 rounded-full" type="submit">
-        COTIZAR
+    <div class="flex items-center py-3 w-full">
+    <textarea name="mensaje" id="mensaje" class=" px-2 h-20 form-textarea mt-1 block w-full" rows="3" placeholder="Escriba su mensaje..."></textarea>
+      
+      
+    </div>
+    <button type="submit" class="uppercase mx-auto flex-shrink-0 bg-white hover:bg-teal-200 border-white  hover:border-teal-700 text-lg border-4 smart__fontcolor mt-4 rounded-full font-bold pt-1 px-4" >
+        Enviar
       </button>
   </form>
   );
 }
 
-export default ContactForm;
+export default FooterForm;

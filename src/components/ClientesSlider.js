@@ -71,7 +71,7 @@ class ClientesSlider extends Component {
                 <img className="md:w-5/12 w-3/4 mx-auto" src={ClienteSmart5} /> 
                 </li>
                 <li class="glide__slide">
-                <img className="md:w-5/12 w-3/4 mx-auto" src={ClienteSmart6} /> 
+                <img className="md:w-5/12 w-3/4 mx-auto mt-4" src={ClienteSmart6} /> 
                 </li>
 
 

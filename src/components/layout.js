@@ -7,13 +7,25 @@ import waveTop1 from "../images/wave-top1.png";
 import waveMid1 from "../images/wave-mid1.png";
 import waveBot1 from "../images/wave-bot1.png";
 import smartSVG from "../images/camaras-portada.png";
-import heroImg from "../images/hero.png";
+import Servicio1 from "../images/servicios/acceso-servicios.png";
+import Servicio2 from "../images/servicios/alarma-servicios.png";
+import Servicio3 from "../images/servicios/cableado-servicios.png";
+import Servicio4 from "../images/servicios/cctv-servicios.png";
+import Servicio5 from "../images/servicios/incendio-servicios.png";
+import Servicio6 from "../images/servicios/mantenimiento-servicios.png";
+import Servicio7 from "../images/servicios/musica-servicios.png";
+import Servicio8 from "../images/servicios/telefono-servicios.png";
 import smartLogo from "../images/LOGO.png";
+import WhatsappSVG from "../images/whatsapp.svg";
+import InstagramSVG from "../images/instagram.svg";
+import FacebookSVG from "../images/facebook.svg";
 import fotoTecnico from "../images/foto-tecnico.png";
 import ContactForm from "./form";
+import FooterForm from "./FooterForm";
 import Slider from "./Slider";
 import PromotionSlider from "./PromotionSlider";
 import ClientesSlider from "./ClientesSlider";
+import ModalForm from "./ModalForm"
 
 function Layout({ children }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -51,26 +63,26 @@ function Layout({ children }) {
       `}
       render={data => (
         
-         <body className="leading-normal tracking-normal text-black gradient">
+         <body className="leading-normal tracking-normal text-black gradient w-screen">
 
             
 
             {/* Navigation */}
-            <nav id="header" className="fixed w-full z-30 top-0 text-white bg-white shadow">
+            <nav id="header" className="fixed w-screen z-30 top-0 text-white bg-white shadow">
             
-              <div className="w-full container mx-auto flex sm:flex-wrap items-center justify-between mt-0 py-2">
+              <div className="w-full px-4 mx-auto flex sm:flex-wrap items-center justify-between mt-0 py-1">
                     
                 {children}
                 <div className="md:pl-4 flex items-center z-50 max-w-sm">
                   <a className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl text-gray-800"  href="#"> 
-                  <img className="md:w-4/12  w-1/5 " src={smartLogo} />
+                  <img className="md:w-4/12  w-2/5 " src={smartLogo} />
                   </a>
                 </div>
                 
                 <div className="block lg:hidden pr-4">
                 
                   <button id="nav-toggle" 
-                          className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-50 bg-primary">
+                          className=" w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-50 bg-primary">
                     <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                   </button>
                 </div>
@@ -81,19 +93,18 @@ function Layout({ children }) {
                       <a className="inline-block py-2 px-4 text-black font-bold no-underline group-focus:text-yellow-300" href="#">INICIO</a>
                     </li> */}
                     <li className="mr-3">
+                      <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#promociones">PROMOCIONES</a>
+                    </li>
+                    <li className="mr-3">
                       <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#servicios">SERVICIOS</a>
                     </li>
-                    <li className="mr-3">
-                      <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">PAQUETES</a>
-                    </li>
-                    <li className="mr-3">
-                      <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">QUIENES SOMOS</a>
-                    </li>
+                    
+                    
                   </ul>
-                  <form action={data.site.siteMetadata.github}>
+                  <a href="#form2">
                     <button type="submit" id="navAction" 
-                            className="mx-auto lg:mx-0 hover:underline font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 bg-primary text-white">CONTACTANOS</button>
-                  </form>
+                            className="mx-auto lg:mx-0 hover:underline font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 bg-secondary text-white">CONTÁCTANOS</button>
+                  </a>
                   
                 </div>
   <div className="lg:hidden flex items-center">
@@ -121,9 +132,10 @@ function Layout({ children }) {
 
               <ul className="z-50">
                   <li className="active"><a href="index.html" className="block text-lg px-5  py-4  hover:bg-green-500 font-semibold" onClick={() => closeMenu()}>INICIO</a></li>
+                  <li><a href="#promociones" className="block text-lg px-5  py-4 hover:bg-green-500 transition duration-300" onClick={() => closeMenu()}>PROMOCIONES</a></li>
                   <li><a href="#servicios" className="block text-lg px-5  py-4 hover:bg-green-500 transition duration-300" onClick={() => closeMenu()}>SERVICIOS</a></li>
-                  <li><a href="#about" className="block text-lg px-5  py-4 hover:bg-green-500 transition duration-300" onClick={() => closeMenu()}>PAQUETES</a></li>
-                  <li><a href="#contact" className="block text-lg px-5  py-4 hover:bg-green-500 transition duration-300" onClick={() => closeMenu()}>QUIENES SOMOS</a></li>
+                  
+                  
               </ul>
           </div>
             </nav>
@@ -131,25 +143,25 @@ function Layout({ children }) {
             {/* Hero */}
             <div className="2xl:pt-8 gradient">
 
-              <div className="container px-3 mx-auto flex flex-wrap flex-col-reverse md:flex-row items-center mt-32 md:mt-20">
+              <div className="container px-3 mx-auto flex flex-wrap flex-col-reverse md:flex-row items-center mt-12 md:mt-20">
               
 
                 <div className="-my-44 flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left z-20">
                   
-                  <h1 className="max-w-lg text-2xl lg:text-6xl md:text-5xl      font-bold leading-none text-white xs:mt-3">SEGURIDAD EN TU HOGAR & OFICINA</h1>
-                  <p className="leading-none text-xl     md:mb-2 mt-2 mb-0 text-white">
-                    {data.site.siteMetadata.title} tiene lo que necesitas para mantenerte<br/> protegido 24/7. Contáctanos y prueba nuestras soluciones profesionales de seguridad.
+                  <h1 className="lg:max-w-lg text-4xl lg:text-6xl md:text-5xl leading-none font-bold text-white xs:mt-3">SEGURIDAD<br/> EN TU HOGAR & OFICINA</h1>
+                  <p className="leading-none text-lg md:text-xl     md:mb-2 mt-2 mb-0 text-white">
+                    {data.site.siteMetadata.title} tiene lo que necesitas para mantenerte<br/> protegido 24/7. Contáctanos y prueba nuestras soluciones profesionales de seguridad y tecnologia.
                     
                   </p>
                   {/* BOTON SOLICITA COTIZACION */}
-                  <button type="submit" className="sm:hidden mx-auto lg:mx-0 hover:underline bg-white text-green-800     font-bold rounded-full xs:my-6 py-2 px-6 shadow-lg z-20">SOLICITA COTIZACIÓN</button>
-
+                 <button id="buttonmodal" type="submit"  className="sm:hidden mx-auto lg:mx-0 hover:underline bg-white text-green-800     font-bold rounded-full my-3 md:my-6 py-2 px-6 shadow-lg z-10">SOLICITA COTIZACIÓN</button>
+<ModalForm/>
 <ContactForm/>
                   
 
                 </div>
                 
-                <div className="w-2/5 sm:w-3/12 md:w-3/12 lg:ml-32 md:ml-24  mt-10     2xl:py-7 z-20">
+                <div className="w-4/5 sm:w-7/12 md:w-4/12 md:ml-auto mt-4 mb-4 2xl:py-7 z-10">
                   <img className="w-full"  src={smartSVG} />
                 </div>
 
@@ -171,15 +183,15 @@ function Layout({ children }) {
            
 
             {/* Seccion 2 */}
-            <section id="servicios" className="border-b py-50 bg-white lg:mt-14 pt-24">
-            <div className="w-full mb-4">	
+            <section  className="border-b py-50 bg-white lg:mt-14 pt-24 -mt-5">
+            <div className="w-full mb-4 pt-32 md:pt-0">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
               <div className="container max-w-5xl mx-auto m-8 flex flex-col">
                 <h2 className="w-full my-2 text-2xl md:text-4xl font-bold leading-tight text-center text-gray-800">TU SEGURIDAD ES PRIMERO<br/> OFRECEMOS CALIDAD A LOS MEJORES PRECIOS</h2>
                 
 
-                  <p className="text-gray-600 w-full md:w-1/2 mb-8 text-center self-center ">Empresa 100% panameña, con mas de 10 años de experiencia en el mercado, dedicados a la venta, instalación y mantenimiento de sistemas de seguridad y tecnología.<br /><br />
+                  <p className="text-gray-600 md:w-3/4 w-1/2 mb-8 text-center self-center md:text-xl font-extralight">Empresa 100% panameña, con mas de 10 años de experiencia en el mercado, dedicados a la venta, instalación y mantenimiento de sistemas de seguridad y tecnología.<br /><br />
                     
                   </p>
                             
@@ -188,7 +200,7 @@ function Layout({ children }) {
             </section>
 
 {/* Promociones del Mes */}
-<section className="fondo__seccion  border-b py-8">
+<section id="promociones" className="fondo__seccion  border-b py-8">
               
               <div className="container mx-auto flex flex-wrap pt-4 pb-12">
               
@@ -231,19 +243,19 @@ function Layout({ children }) {
 {/* Seccion Tecnico */}
             </section>
             <section className="fondo__seccion border-b">
-              <div className="container max-w-5xl mx-auto">
+              <div className="container  mx-auto">
                 
                 
                 <div className="flex flex-row">
-                  <div className="w-4/6 sm:w-1/2">
+                  <div className=" sm:w-1/2">
                   
-                  <img className="w-full especial__tecnico" src={fotoTecnico} />
+                  <img className="w-full  " src={fotoTecnico} />
                     
                   </div>
                   
-                  <div className="w-full sm:w-1/2 -ml-20 z-10 mt-4">
-                  <h3 className="text-lg md:text-3xl text-gray-800 font-bold leading-none mb-3 ml-12">SERVICIO GARANTIZADO</h3>
-                  <p className="text-xs w-3/4 ml-12">Obtén 1 año de garantía sobre los equipos que obtengas con nosotros.<br/><br/>
+                  <div className="w-full sm:w-1/2 -ml-20 z-10 mt-2 sm:mt-5 md:mt-12">
+                  <h3 className="text-md sm:text-2xl md:text-3xl lg:text-5xl lg:mb-8 lg:mt-12 text-gray-800 font-bold leading-none mb-1 ml-12">SERVICIO GARANTIZADO</h3>
+                  <p className="text-xs sm:text-lg  lg:text-3xl sm:w-full w-3/4 ml-12">Obtén 1 año de garantía sobre los equipos que obtengas con nosotros.<br/><br/>
                     
                     Smart Group Panamá está comprometido a ofrecerte los mejores equipos para tu seguridad residencial y empresarial.
                   </p>
@@ -257,72 +269,173 @@ function Layout({ children }) {
 
 
             
-            {/* Pricing cards */}
-            <section className="bg-gray-100 py-8">
+            {/* Seccion Servicios */}
+            <section id="servicios" className="bg-gray-100 py-8">
               
-              <div className="container mx-auto px-2 pt-4 pb-12 text-gray-800">
-
-                <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Pricing</h1>
-                <div className="w-full mb-4">	
+              
+              <div className="container flex flex-wrap justify-center mx-auto px-2 pt-4 pb-12 text-gray-800">
+              <div className="w-full mb-4 leading-none">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
-                
-                <div className="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
-                  
-                  <div className="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
-                    <div className="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-                      <div className="p-8 text-3xl font-bold text-center border-b-4">Free</div>
-                      <ul className="w-full text-center text-sm">
-                        <li className="border-b py-4">Thing</li>
-                        <li className="border-b py-4">Thing</li>
-                        <li className="border-b py-4">Thing</li>
-                      </ul>
-                    </div>
-                    <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-                      <div className="w-full pt-6 text-3xl text-gray-600 font-bold text-center">£0 <span className="text-base">for one user</span></div>
-                      <div className="flex items-center justify-center">
-                        <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg">Sign Up</button>
-                      </div>
-                    </div>
-                  </div>
+                <h1 className="w-full my-2 md:text-5xl text-2xl font-bold leading-tight text-center text-gray-800">NUESTROS SERVICIOS</h1>
+                {/* Servicio #1 */}
+                <div className=" especial__maxwidth p-2 flex flex-col flex-grow flex-shrink ">
 
-                  <div className="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
-                    <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                      <div className="w-full p-8 text-3xl font-bold text-center">Basic</div>
-                      <div className="h-1 w-full gradient my-0 py-0 rounded-t"></div>
-                      <ul className="w-full text-center text-base font-bold">
-                        <li className="border-b py-4">Thing</li>
-                        <li className="border-b py-4">Thing</li>
-                        <li className="border-b py-4">Thing</li>
-                        <li className="border-b py-4">Thing</li>
-                      </ul>					
-                    </div>
-                    <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-                      <div className="w-full pt-6 text-4xl font-bold text-center">£x.99 <span className="text-base">/ per user</span></div>
-                      <div className="flex items-center justify-center">
-                        <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg">Sign Up</button>
-                      </div>
-                    </div>
+                  <div className="flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio1} />
+                    </a>
                   </div>
                   
-                  <div className="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
-                    <div className="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-                      <div className="p-8 text-3xl font-bold text-center border-b-4">Pro</div>
-                      <ul className="w-full text-center text-sm">
-                        <li className="border-b py-4">Thing</li>
-                        <li className="border-b py-4">Thing</li>
-                        <li className="border-b py-4">Thing</li>
-                      </ul>
-                    </div>
-                    <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-                      <div className="w-full pt-6 text-3xl text-gray-600 font-bold text-center">£x.99 <span className="text-base">/ per user</span></div>
-                      <div className="flex items-center justify-center">
-                        <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg">Sign Up</button>
-                      </div>
-                    </div>
-                  </div>
 
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-2 md:py-8 md:text-xl text-md flex align-center"><h3 className="mx-auto">CONTROL DE ACCESO Y RELOJES DE ASISTENCIA</h3></div>
+                      
+                    </a>
+                  </div>
+                  
                 </div>
+                {/* Servicio #2 */}
+                <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
+
+                  <div className="flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio2} />
+                    </a>
+                  </div>
+                  
+
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-6 md:py-8 md:text-xl text-md"><h3 className="mx-auto ">ALARMAS CONTRA ROBO</h3></div>
+                      
+                    </a>
+                  </div>
+                  
+                </div>
+                {/* Servicio #3 */}
+                <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
+
+                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio3} />
+                    </a>
+                  </div>
+                  
+
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-6 md:py-8 md:text-xl text-md"><h3 className="mx-auto ">CABLEADO ESTRUCTURADO</h3></div>
+                      
+                    </a>
+                  </div>
+                  
+                </div>
+                {/* Servicio #4 */}
+                <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
+
+                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio4} />
+                    </a>
+                  </div>
+                  
+
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="h-full flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-6 md:py-8 md:text-xl text-md flex items-center"><h3 className="mx-auto  min-h-min">CCTV (CÁMARAS)</h3></div>
+                      
+                    </a>
+                  </div>
+                  
+                </div>
+
+                {/* Servicio #5 */}
+                <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
+
+                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio5} />
+                    </a>
+                  </div>
+                  
+
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="h-full flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-6 md:py-8 md:text-xl text-md flex items-center"><h3 className="mx-auto ">ALARMAS CONTRA INCENDIOS</h3></div>
+                      
+                    </a>
+                  </div>
+                  
+                </div>
+
+                {/* Servicio #6 */}
+                <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
+
+                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio6} />
+                    </a>
+                  </div>
+                  
+
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-6 md:py-8 md:text-xl text-md"><h3 className="mx-auto md:w-11/12">MANTENIMIENTO CONTADORA DE BILLETES</h3></div>
+                      
+                    </a>
+                  </div>
+                  
+                </div>
+
+                {/* Servicio #7 */}
+                <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
+
+                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio7} />
+                    </a>
+                  </div>
+                  
+
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="h-full flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-6 md:py-8 md:text-xl text-md flex items-center"><h3 className="mx-auto ">AUDIO AMBIENTAL</h3></div>
+                      
+                    </a>
+                  </div>
+                  
+                </div>
+
+                {/* Servicio #8 */}
+                <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
+
+                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className=" no-underline hover:no-underline">
+                    <img className="w-full z-20" src={Servicio8} />
+                    </a>
+                  </div>
+                  
+
+                  <div className="text-center flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                    <a  className="flex flex-wrap no-underline hover:no-underline">
+                      
+                      <div className="w-full smart__fontcolor mx-auto py-6 md:py-8 md:text-xl text-md"><h3 className="mx-auto ">TELEFONÍA E INTERCOMS</h3></div>
+                      
+                    </a>
+                  </div>
+                  
+                </div>
+                
+                
                 
               </div>
                 
@@ -346,22 +459,16 @@ function Layout({ children }) {
               </g>
             </svg>
 
-            {/* CTA block */}
-            <section className="container mx-auto text-center py-6 mb-12">
+            {/* Formulario */}
+            <section id="form2" className="container mx-auto text-center py-6 mb-12">
 
-              <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Quieres mejorar la seguridad de tu hogar o negocio?</h1>
+              <h1 className="w-full my-2 md:text-5xl text-3xl font-bold leading-tight text-center text-white">¿NECESITAS AYUDA ESCOGIENDO LA <span className="bg-white smart__fontcolor pt-2">MEJOR OPCIÓN PARA TI?</span></h1>
               <div className="w-full mb-4">	
                 <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
               </div>
 
-              <h3 className="my-4 text-3xl leading-tight">Consulta con nosotros</h3>	
+              <FooterForm/>
 
-              <form action={data.site.siteMetadata.blog}>
-                <button type="submit"
-                        className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg">Contáctanos</button>
-              </form>
-
-              <Slider/>
             </section>
 
             {/* Footer */}
@@ -374,64 +481,59 @@ function Layout({ children }) {
                   <div className="flex-1 mb-6">
                   
                     <a className="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="#"> 
-                    <img className="w-2/5  md:w-3/5" src={smartLogo} />
+                    <img className="w-3/5  md:w-3/5 mx-auto" src={smartLogo} />
                     </a>
                   </div>
                 
                 
                         <div className="flex-1">
-                            <p className="uppercase text-gray-500 md:mb-6">Links</p>
-                            <ul className="list-reset mb-6">
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">FAQ</a>
+                            <h2 className="uppercase text-xl md:mb-6 mx-auto md:mx-0 max-w-min font-bold">Contáctanos</h2>
+                            <ul className="list-reset mb-6 mx-auto md:mx-0 max-w-min">
+                                <li className="mt-2 mr-2 md:block md:mr-0 w-full flex justify-center">
+                                    <a href="mailto:ventas@smartgrouppanama.com" className="text-gray-600 text-lg no-underline hover:underline hover:text-green-700">ventas@smartgrouppanama.com
+</a>
                                 </li>
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Help</a>
+                                <li className="mt-2 mr-2 md:block md:mr-0 mx-auto flex justify-center">
+                                    <a href="tel:+50766091436" className="text-gray-600 text-lg no-underline hover:underline hover:text-green-700">+507 6609-1436</a>
                                 </li>
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Support</a>
+                                <li className="mt-2 mr-2 md:block md:mr-0 flex justify-center">
+                                    <a href="#" className="text-gray-600 text-lg no-underline hover:underline hover:text-green-700 text-center">Ciudad de Panamá, Panamá
+</a>
                                 </li>
+                               
                             </ul>
                         </div>
+
                         <div className="flex-1">
-                            <p className="uppercase text-gray-500 md:mb-6">Legal</p>
-                            <ul className="list-reset mb-6">
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Terms</a>
+                        <h2 className="text-xl md:mb-6 mx-auto md:mx-0 max-w-min font-bold">HORARIOS</h2>
+                            <ul className="list-reset mb-6 flex flex-col justify-center w-full md:mx-0 mx-auto">
+                                <li className="mt-2 mr-2 md:block md:mr-0">
+                                    <p className="text-gray-600 text-lg no-underline hover:underline hover:text-green-700">Lun-Vie 8:00 a.m. - 6:00 p.m.  </p>
                                 </li>
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Privacy</a>
+                                <li className="mt-2 mr-2 md:block md:mr-0">
+                                <p className="text-gray-600 text-lg no-underline hover:underline hover:text-green-700">Sab 8:00 a.m. - 1:00 p.m.  </p>
                                 </li>
+                                
                             </ul>
                         </div>
+                       
                         <div className="flex-1">
-                            <p className="uppercase text-gray-500 md:mb-6">Social</p>
-                            <ul className="list-reset mb-6">
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Facebook</a>
+                        <h2 className="text-xl md:mb-6 mx-auto md:mx-0 max-w-min font-bold">¡SÍGUENOS!</h2>
+                            <ul className="list-reset mb-6 flex flex-row justify-center md:justify-start w-full mx-auto md:mx-0">
+                                <li className="mt-2 mr-2 md:block md:mr-0">
+                                    <a href="https://wa.me/50766091436" target="_blank" className="no-underline hover:underline text-gray-800 hover:text-orange-500"><img className=" w-10" src={WhatsappSVG} /></a>
                                 </li>
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Linkedin</a>
+                                <li className="mt-2 mr-2 md:block md:mr-0">
+                                    <a href="https://instagram.com/smartgrouppanama" target="_blank" className="no-underline hover:underline text-gray-800 hover:text-orange-500"><img className=" w-10" src={InstagramSVG} /></a>
                                 </li>
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Twitter</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="flex-1">
-                            <p className="uppercase text-gray-500 md:mb-6">Company</p>
-                            <ul className="list-reset mb-6">
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Official Blog</a>
-                                </li>
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">About Us</a>
-                                </li>
-                                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                                    <a href="#" className="no-underline hover:underline text-gray-800 hover:text-orange-500">Contact</a>
+                                <li className="mt-2 mr-2 md:block md:mr-0">
+                                    <a href="https://facebook.com/smartgrouppanama" target="_blank" className="no-underline hover:underline text-gray-800 hover:text-orange-500"><img className=" w-10" src={FacebookSVG} /></a>
                                 </li>
                             </ul>
                         </div>
+
+                       
+                       
                     </div>
                 </div>
               
