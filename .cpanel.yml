@@ -1,5 +1,5 @@
 --- 
 deployment: 
      tasks: 
-          - export DEPLOYPATH=/home2/smartgrouppanama/demo.smartgrouppanama.com
+          - export DEPLOYPATH=/home2/smartgrouppanama/public_html
           - /bin/cp -R public/* $DEPLOYPATH
