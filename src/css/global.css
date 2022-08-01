@@ -43,6 +43,10 @@ html{
     
     margin-top: 38px;
 }
+.rounded__special{
+    border-top-left-radius: 1.5rem !important;
+    border-top-right-radius: 1.5rem !important;
+}
 
 
 

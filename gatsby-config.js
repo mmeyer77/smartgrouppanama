@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://smartgrouppanama.com`,
     title: `Smart Group Panamá`,
     description: `Lo que necesitas para que te mantengas protegido 24/7. Contáctanos y prueba nuestras soluciones profesionales de seguridad.`,
     author: `Mango Digital Studio`,
-    github: `https://github.com/app-generator/gatsbyjs-starter-tailwindplay`,
-    blog: `https://blog.appseed.us/tag/gatsbyjs`,
-    product: `https://appseed.us/apps/gatsbyjs`,
-    docs: `https://docs.appseed.us/apps/gatsbyjs`
+    github: ``,
+    blog: ``,
+    product: ``,
+    docs: ``
 
   },
   plugins: [
@@ -23,6 +24,7 @@ module.exports = {
         icon: `src/images/favicon.png`
       }
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-purgecss",

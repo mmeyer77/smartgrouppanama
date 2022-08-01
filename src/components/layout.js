@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Menu from "./Menu";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
@@ -25,7 +25,9 @@ import FooterForm from "./FooterForm";
 import Slider from "./Slider";
 import PromotionSlider from "./PromotionSlider";
 import ClientesSlider from "./ClientesSlider";
-import ModalForm from "./ModalForm"
+import ModalForm from "./ModalForm";
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 function Layout({ children }) {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -39,6 +41,12 @@ function Layout({ children }) {
       }
   });
   }
+
+  useEffect(() => {
+    AOS.init({
+      duration : 500
+    });
+  }, []);
   
 
   const handleToggle = () => {
@@ -68,12 +76,12 @@ function Layout({ children }) {
             
 
             {/* Navigation */}
-            <nav id="header" className="fixed w-screen z-30 top-0 text-white bg-white shadow">
+            <nav id="header" className="fixed w-screen z-30 top-0 text-white bg-white shadow" >
             
               <div className="w-full px-4 mx-auto flex sm:flex-wrap items-center justify-between mt-0 py-1">
                     
                 {children}
-                <div className="md:pl-4 flex items-center z-50 max-w-sm">
+                <div className="md:pl-4 flex items-center z-50 max-w-sm" >
                   <a className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl text-gray-800"  href="#"> 
                   <img className="md:w-4/12  w-2/5 " src={smartLogo} />
                   </a>
@@ -146,10 +154,12 @@ function Layout({ children }) {
               <div className="container px-3 mx-auto flex flex-wrap flex-col-reverse md:flex-row items-center mt-12 md:mt-20">
               
 
-                <div className="-my-44 flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left z-20">
+                <div className=" flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left z-20 pt-12" >
                   
-                  <h1 className="lg:max-w-lg text-4xl lg:text-6xl md:text-5xl leading-none font-bold text-white xs:mt-3">SEGURIDAD<br/> EN TU HOGAR & OFICINA</h1>
-                  <p className="leading-none text-lg md:text-xl     md:mb-2 mt-2 mb-0 text-white">
+                  <h1 className="lg:max-w-lg text-4xl lg:text-6xl md:text-5xl leading-none font-bold text-white xs:mt-3 px-4" data-aos="fade-up"
+     data-aos-duration="1000">SEGURIDAD<br/> EN TU HOGAR & OFICINA</h1>
+                  <p className="leading-none text-lg md:text-xl     md:mb-2 mt-2 mb-0 text-white px-4" data-aos="fade-up"
+     data-aos-duration="1500">
                     {data.site.siteMetadata.title} tiene lo que necesitas para mantenerte<br/> protegido 24/7. Contáctanos y prueba nuestras soluciones profesionales de seguridad y tecnologia.
                     
                   </p>
@@ -161,7 +171,8 @@ function Layout({ children }) {
 
                 </div>
                 
-                <div className="w-4/5 sm:w-7/12 md:w-4/12 md:ml-auto mt-4 mb-4 2xl:py-7 z-10">
+                <div className="w-4/5 sm:w-7/12 md:w-4/12 md:ml-auto mt-4 mb-4 2xl:py-7 z-10" data-aos="fade-left"
+     data-aos-duration="1500">
                   <img className="w-full"  src={smartSVG} />
                 </div>
 
@@ -184,14 +195,14 @@ function Layout({ children }) {
 
             {/* Seccion 2 */}
             <section  className="border-b py-50 bg-white lg:mt-14 pt-24 -mt-5">
-            <div className="w-full mb-4 pt-32 md:pt-0">	
+            <div className="w-full mb-4 pt-32 md:pt-0" >	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
-              <div className="container max-w-5xl mx-auto m-8 flex flex-col">
+              <div className="container max-w-5xl mx-auto m-8 flex flex-col" data-aos="fade-up" data-aos-duration="2000">
                 <h2 className="w-full my-2 text-2xl md:text-4xl font-bold leading-tight text-center text-gray-800">TU SEGURIDAD ES PRIMERO<br/> OFRECEMOS CALIDAD A LOS MEJORES PRECIOS</h2>
                 
 
-                  <p className="text-gray-600 md:w-3/4 w-full mb-8 text-center self-center md:text-xl font-extralight">Empresa 100% panameña, con mas de 10 años de experiencia en el mercado, dedicados a la venta, instalación y mantenimiento de sistemas de seguridad y tecnología.<br /><br />
+                  <p className="text-gray-600 md:w-3/4 w-full text-center self-center md:text-2xl font-extralight">Empresa 100% panameña, con mas de 10 años de experiencia en el mercado, dedicados a la venta, instalación y mantenimiento de sistemas de seguridad y tecnología.<br /><br />
                     
                   </p>
                             
@@ -200,11 +211,11 @@ function Layout({ children }) {
             </section>
 
 {/* Promociones del Mes */}
-<section id="promociones" className="fondo__seccion  border-b py-8">
+<section id="promociones" className="fondo__seccion  border-b py-8" >
               
               <div className="container mx-auto flex flex-wrap pt-4 pb-12">
               
-                <h3 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800 mb-12">¡Aprovecha nuestras <span className="gradient2 text-white font-normal py-1 px-1">PROMOCIONES</span> del mes de Octubre!</h3>
+                <h3 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800 mb-12" data-aos="fade-up">¡Aprovecha nuestras <span className="gradient2 text-white font-normal py-1 px-1">PROMOCIONES</span> del Mes</h3>
                 {/* Separador <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div> */}
@@ -223,11 +234,11 @@ function Layout({ children }) {
             {/* Carousel de Clientes */}
 <section className="bg-white border-b py-8">
               
-              <div className="container mx-auto flex flex-wrap pt-4">
+              <div className="container mx-auto flex flex-wrap pt-4" data-aos="fade-up">
               <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
-                <h3 className="md:w-full w-4/5 mx-auto text-xl md:text-3xl font-bold leading-tight text-center text-gray-800 my-8">CONOCE ALGUNOS DE NUESTROS CLIENTES</h3>
+                <h3 className="md:w-full w-4/5 mx-auto text-xl md:text-3xl font-bold leading-tight text-center text-gray-800 my-8" >CONOCE ALGUNOS DE NUESTROS CLIENTES</h3>
                 {/* Separador <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div> */}
@@ -247,13 +258,13 @@ function Layout({ children }) {
                 
                 
                 <div className="flex flex-row">
-                  <div className=" sm:w-1/2">
+                  <div className=" sm:w-1/2" data-aos="flip-right" data-aos-duration="1000">
                   
                   <img className="w-full  " src={fotoTecnico} />
                     
                   </div>
                   
-                  <div className="w-full sm:w-1/2 -ml-20 z-10 mt-2 sm:mt-5 md:mt-12">
+                  <div className="w-full sm:w-1/2 -ml-20 z-10 mt-2 sm:mt-5 md:mt-12" data-aos="fade-left" data-aos-duration="1800">
                   <h3 className="text-md sm:text-2xl md:text-3xl lg:text-5xl lg:mb-8 lg:mt-12 text-gray-800 font-bold leading-none mb-1 ml-12">SERVICIO GARANTIZADO</h3>
                   <p className="text-xs sm:text-lg  lg:text-3xl sm:w-full w-3/4 ml-12">Obtén 1 año de garantía sobre los equipos que obtengas con nosotros.<br/><br/>
                     
@@ -279,9 +290,9 @@ function Layout({ children }) {
                 </div>
                 <h1 className="w-full my-2 md:text-5xl text-2xl font-bold leading-tight text-center text-gray-800">NUESTROS SERVICIOS</h1>
                 {/* Servicio #1 */}
-                <div className=" especial__maxwidth p-2 flex flex-col flex-grow flex-shrink ">
+                <div className=" especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className="flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className="flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio1} />
                     </a>
@@ -300,7 +311,7 @@ function Layout({ children }) {
                 {/* Servicio #2 */}
                 <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className="flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className="flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio2} />
                     </a>
@@ -319,7 +330,7 @@ function Layout({ children }) {
                 {/* Servicio #3 */}
                 <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className=" flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio3} />
                     </a>
@@ -338,7 +349,7 @@ function Layout({ children }) {
                 {/* Servicio #4 */}
                 <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className=" flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio4} />
                     </a>
@@ -358,7 +369,7 @@ function Layout({ children }) {
                 {/* Servicio #5 */}
                 <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className=" flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio5} />
                     </a>
@@ -378,7 +389,7 @@ function Layout({ children }) {
                 {/* Servicio #6 */}
                 <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className=" flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio6} />
                     </a>
@@ -398,7 +409,7 @@ function Layout({ children }) {
                 {/* Servicio #7 */}
                 <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className=" flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio7} />
                     </a>
@@ -418,7 +429,7 @@ function Layout({ children }) {
                 {/* Servicio #8 */}
                 <div className="especial__maxwidth p-2 flex flex-col flex-grow flex-shrink">
 
-                  <div className=" flex justify-center align-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                  <div className=" flex justify-center align-center bg-white rounded__special rounded-b-none overflow-hidden shadow">
                     <a  className=" no-underline hover:no-underline">
                     <img className="w-full z-20" src={Servicio8} />
                     </a>

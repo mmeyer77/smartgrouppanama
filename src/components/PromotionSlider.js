@@ -40,7 +40,7 @@ class PromotionSlider extends Component {
     return(
      <div class="container">
        
-        <div class="glide2" data-glide-el="controls">
+        <div class="glide2" data-glide-el="controls" >
         <button class="hidden z-10 absolute top-1/2 right-0" data-glide-dir=">">next</button>
         <div class="flechas__glide" data-glide-el="controls">
     <button class="z-10 absolute mt-40 w-6 p-1 ml-1" data-glide-dir="<"><img src={Previous} /></button>
@@ -51,31 +51,31 @@ class PromotionSlider extends Component {
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides">
 
-              <li class="glide__slide">
+              <li class="glide__slide" data-aos="flip-left">
              
-                <img className="w-4/5 md:w-full bg-white shadow-lg mx-auto" src={Smart1} />
+                <img className="w-4/5 md:w-10/12 bg-white shadow-lg mx-auto" src={Smart1} />
                 
                </li>
 
-                <li class="glide__slide">
+                <li class="glide__slide" data-aos="flip-left">
                
-                <img className="w-4/5 md:w-full bg-white shadow-lg mx-auto" src={Smart2} />       
+                <img className="w-4/5 md:w-10/12 bg-white shadow-lg mx-auto" src={Smart2} />       
 
 
                 </li>
 
-                <li class="glide__slide">
+                <li class="glide__slide" data-aos="flip-left">
                   
-                <img className="w-4/5 md:w-full bg-white shadow-lg mx-auto" src={Smart3} /> 
+                <img className="w-4/5 md:w-10/12 bg-white shadow-lg mx-auto" src={Smart3} /> 
                 </li>
 
 
                 <li class="glide__slide">
-                <img className="w-4/5 md:w-full bg-white shadow-lg mx-auto" src={Smart4} /> 
+                <img className="w-4/5 md:w-10/12 bg-white shadow-lg mx-auto" src={Smart4} /> 
                 </li>
                 <li class="glide__slide">
                
-                <img className="w-4/5 md:w-full bg-white shadow-lg mx-auto" src={Smart5} />       
+                <img className="w-4/5 md:w-10/12 bg-white shadow-lg mx-auto" src={Smart5} />       
               
 
                 </li>

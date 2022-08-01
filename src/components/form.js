@@ -11,7 +11,8 @@ function ContactForm() {
     setTimeout(function(){window.location.reload();},1500)
   }
   return (
-    <form class="hidden md:flex flex-wrap flex-row justify-between bg-white rounded-lg px-4 py-2 w-full max-w-2xl mt-4" onSubmit={handleSubmit}>
+    <form class="hidden md:flex flex-wrap flex-row justify-between bg-white rounded-lg px-4 py-2 w-full max-w-2xl mt-4" onSubmit={handleSubmit} data-aos="fade-up"
+    data-aos-duration="2000">
     <div class="flex items-center border-b py-3 w-1/4">
       <input class="appearance-none bg-transparent border-none w-full text-black mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="NOMBRE" id="name"
          
